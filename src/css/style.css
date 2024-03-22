@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(244, 244, 244);
+  font-family: sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.text-row {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+}
+
+.row-1 {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  gap: 5px;
+}
+
+.btn-class {
+  margin: auto;
+}
+
+.btn-class button{
+  width: 300px;
+}
