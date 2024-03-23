@@ -6,6 +6,7 @@ const credits = document.getElementsByClassName('credits');
 const grades = document.getElementsByClassName('grades');
 const submitBtn = document.getElementById('submitbtn');
 
+//Calculates GPA
 function calculate() {
   let totalGradePoints = 0;
   let totalCredits = 0;
@@ -33,7 +34,6 @@ function calculate() {
       displayGpaDiv.style.backgroundColor = '#450000';
     } 
 
-
     document.getElementById("gpacontainer").innerHTML = "";
     displayGpaDiv.append(displayHeaderText);
     displayGpaDiv.append(displayGpaText);
@@ -48,16 +48,16 @@ function calculate() {
       let myGrades;
 
       switch (grade) {
-        case '1':
+        case '1': //A
           myGrades = 4.0;
           break;
-        case '2':
+        case '2': //B
           myGrades = 3.0;
           break;
-        case '3':
+        case '3': //C
           myGrades = 2.0;
           break;
-        case '4':
+        case '4': //F
           myGrades = 0.0;
           break;
         default:
@@ -65,22 +65,20 @@ function calculate() {
       }
 
       if (!isNaN(credit)) { // Check if credit is a valid number
-        let gradePoints = myGrades * credit;
+        let gradePoints = myGrades * credit; //Multiply Grades by Credits
 
-        totalGradePoints += gradePoints;
-        totalCredits += credit;
+        totalGradePoints += gradePoints; //Add total number of grade points togeher
+        totalCredits += credit; //Add total number of credits together
 
-        gpa = totalGradePoints/totalCredits;
+        gpa = totalGradePoints/totalCredits; //Divide the total number of grade points by the total number of credits
       
-        console.log(gpa.toFixed(2)); //Leaves only 2 decimals.
         displayGpa();
-        
       } else {
         console.log("Invalid credits value");
       }
     }
   }
-  totalgrades()
-}
+  totalgrades();
+};
 
 submitBtn.addEventListener('click', calculate);
