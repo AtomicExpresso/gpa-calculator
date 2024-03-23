@@ -69,17 +69,17 @@ function calculate() {
 
         totalGradePoints += gradePoints;
         totalCredits += credit;
-        
-        gpa = totalGradePoints/totalCredits;
 
+        gpa = totalGradePoints/totalCredits;
+      
         console.log(gpa.toFixed(2)); //Leaves only 2 decimals.
         displayGpa();
+        
       } else {
         console.log("Invalid credits value");
       }
     }
   }
-
   totalgrades()
 }
 
